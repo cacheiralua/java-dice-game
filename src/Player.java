@@ -1,3 +1,5 @@
+import jdk.internal.access.JavaLangInvokeAccess;
+
 /**
  * Esta classe tem como função criar um jogador.
  *

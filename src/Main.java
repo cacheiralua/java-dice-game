@@ -84,13 +84,16 @@ public class Main {
         option = keyboard.nextLine();
         switch(option) {
             case "1":
-                createGameMenuScreen();
+                Player player = player.getName();
                 break;
             case "2":
-                playerMenuScreen();
+                Player player = new player();
                 break;
             case "3":
-                System.exit(1);
+
+                break;
+            case "4":
+                createGameMenuScreen();
                 break;
             default:
                 break;
