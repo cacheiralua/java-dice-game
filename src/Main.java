@@ -1,18 +1,18 @@
 import java.io.IOException;
-import java.lang.Thread;
+//import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     private static String option;
-    private static ArrayList<Game> gameList= new ArrayList<>();
-    private static Scanner keyboard = new Scanner(System.in);
+    private static final ArrayList<Game> gameList= new ArrayList<>();
+    private static final Scanner keyboard = new Scanner(System.in);
 
     public static void clearScreen(){
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } catch (InterruptedException | IOException e) {
-
+            System.out.println("a");
         }
     }
 
@@ -28,18 +28,12 @@ public class Main {
         System.out.println("****************************************");
         System.out.print("*             ->");
         option = keyboard.nextLine();
-        switch(option) {
-            case "1":
-                createGameMenuScreen();
-                break;
-            case "2":
-                playerMenuScreen();
-                break;
-            case "3":
-                System.exit(1);
-                break;
-            default:
-                break;
+        switch (option) {
+            case "1" -> createGameMenuScreen();
+            case "2" -> playerMenuScreen();
+            case "3" -> System.exit(1);
+            default -> {
+            }
         }
     }
 
@@ -55,18 +49,12 @@ public class Main {
         System.out.println("*             3- Return                *");
         System.out.println("****************************************");
         option = keyboard.nextLine();
-        switch(option) {
-            case "1":
-                createGameMenuScreen();
-                break;
-            case "2":
-                playerMenuScreen();
-                break;
-            case "3":
-                System.exit(1);
-                break;
-            default:
-                break;
+        switch (option) {
+            case "1" -> createGameMenuScreen();
+            case "2" -> playerMenuScreen();
+            case "3" -> System.exit(1);
+            default -> {
+            }
         }
     }
     public static void playerMenuScreen() {
@@ -82,27 +70,19 @@ public class Main {
         System.out.println("*             4- Main Menu             *");
         System.out.println("****************************************");
         option = keyboard.nextLine();
-        switch(option) {
-            case "1":
-                createGameMenuScreen();
-                break;
-            case "2":
-                playerMenuScreen();
-                break;
-            case "3":
-                System.exit(1);
-                break;
-            default:
-                break;
+        switch (option) {
+            case "1" -> createGameMenuScreen();
+            case "2" -> playerMenuScreen();
+            case "3" -> System.exit(1);
+            default -> {
+            }
         }
 
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         while (true) {
             createMenuScreen();
         }
-
     }
-
 }

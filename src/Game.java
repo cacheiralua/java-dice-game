@@ -15,9 +15,9 @@ public class Game {
 
 
     // : Atributos da classe Game:
-    private ArrayList<Player> playerList = new ArrayList<Player>();
-    private ArrayList<Player> playerHistory = new ArrayList<Player>();
-    private ArrayList<Integer> diceHistory = new ArrayList<Integer>();
+    private ArrayList<Player> playerList;
+    private ArrayList<Player> playerHistory;
+    private ArrayList<Integer> diceHistory;
     private boolean gameIsFinished;
     private boolean gameIsStarted;
     private Dice dice;
@@ -26,7 +26,10 @@ public class Game {
     public Game() {
         this.gameIsFinished = false;
         this.gameIsStarted = false;
-        this.dice = new Dice();
+        dice = new Dice();
+        this.playerList = new ArrayList<>();
+        this.playerHistory = new ArrayList<>();
+        this.diceHistory = new ArrayList<>();
     }
 
     // : Métodos Seletores
@@ -35,19 +38,14 @@ public class Game {
      *
      * @return The gameIsFinished variable is being returned.
      */
-    public boolean getGameIsFinished() {
-        return this.gameIsFinished;
-
-    }
+    public boolean getGameIsFinished() { return this.gameIsFinished; }
 
     /**
      * .This function returns the number of players in the game
      *
      * @return The number of players in the playerList.
      */
-    public int getNumberOfPlayers() {
-        return this.playerList.size();
-    }
+    public int getNumberOfPlayers() { return this.playerList.size(); }
 
     /**
      * .This function returns the value of the diceHistory variable
@@ -114,29 +112,14 @@ public class Game {
     }
 
     /**
-     * .This function rolls the dice and adds the result to the diceHistory
-     *
-     * @return The number that was rolled.
-     */
-    public int rollDice() {
-        int dice = this.dice.rollDice();
-        this.addDiceHistory(dice);
-        return dice;
-    }
-
-    /**
      * .This function ends the game
      */
-    public void endGame() {
-        this.gameIsFinished = true;
-    }
+    public void endGame() { this.gameIsFinished = true; }
 
     /**
      * .This function starts the game
      */
-    public void startGame() {
-        this.gameIsStarted = false;
-    }
+    public void startGame() { this.gameIsStarted = false; }
 
     // : Métodos Modificadores
 
